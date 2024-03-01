@@ -56,11 +56,15 @@ export default function Question({ incrementScore, incrementAttempt }) {
                 return response.json();
             })
             .then((actualData) => {
-                setCitation(actualData.citation);
-                setGoodAnswer(actualData.infos.personnage);
-                mixAnswers(actualData.infos.personnage);
-                setErrorMessage(null);
-                setLoading(false);
+                if (actualData.infos.personnage === "") {
+                    fetchData();
+                } else {
+                    setCitation(actualData.citation);
+                    setGoodAnswer(actualData.infos.personnage);
+                    mixAnswers(actualData.infos.personnage);
+                    setErrorMessage(null);
+                    setLoading(false);
+                }
             })
             .catch((err) => {
                 console.log(err);
