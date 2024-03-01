@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quiz Kaamelott{% endblock %}
+
+{% block body %}
+    <div class="flex justify-center pt-16">
+        <div class="w-100 h-32 text-3xl backdrop-blur-sm bg-white/30 rounded-full flex px-3">
+            <h1 class="text-black self-center leading-normal">Bienvenue sur le quiz des répliques Kaamelott</h1>
+        </div>
+    </div>
+    <div id="game"></div>
+{% endblock %}
+{% block javaScript %}
+    {{ encore_entry_script_tags('informations') }}
+{% endblock %}

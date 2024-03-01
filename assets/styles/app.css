@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: 'folkard';
+    src: url('./font/folkard.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+#mainContainer{
+    font-family: folkard, serif;
+    min-height: 100vh;
+    background-image: url('../../public/build/images/fond.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    h1{
+        line-height: normal;
+    }
+}
+
+#bg {
+    margin-inline: auto;
+    margin-top: 4rem;
+    position: relative;
+    width: 70vw;
+    min-height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../public/build/images/questions.png');
+    background-size: cover;
+    opacity: 0.5;
+}
+
+#informations, #question, #results {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 300px;
+    color: black;
+    text-align: center;
+    padding: 2rem;
+}
+
+#answers {
+    margin-top: 2rem;
+    margin-inline: auto;
+    width: 50vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    button{
+        margin-block: 1rem;
+        width: 90%;
+        height: 60%;
+    }
+}
+
+footer{
+    margin-left: 2rem;
+    position: fixed;
+    bottom: 0;
+    color: white;
+    font-family: folkard, serif;
+}
+
+

@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  kaamelott_db:
+    image: mysql:8
+    container_name: kaamelott_mysql
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'kaamelott'
+      MYSQL_PASSWORD: 'cM571cK'
+      MYSQL_ROOT_PASSWORD: '5UP3r4DM1NP455W0rD'
+    ports:
+      - "3306:3306"
+    volumes:
+      - "../.docker-data/kaamelott_mysql:/var/lib/mysql"
+  kaamelott_php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: kaamelott_php
+    ports:
+      - "9001:9001"
+    volumes:
+      - ".:/product/kaamelott/www"
+    networks:
+      - kaamelott
+
+  kaamelott_nginx:
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    container_name: kaamelott_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ".:/product/kaamelott/www"
+    networks:
+      - kaamelott
+
+networks:
+  kaamelott:
+    name: stickdev_kaamelott

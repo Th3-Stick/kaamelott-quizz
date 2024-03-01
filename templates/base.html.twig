@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='description' content="HigumaDev, créé par Adrien Delaigue, développeur Web Freelance. Besoin d'un site web ? D'une refonte ou d'outils internes ? Contactez-moi pour des solutions adaptées à vos besoins.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <!-- Custom CSS -->
+    {{ encore_entry_link_tags('app') }}
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ asset('build/images/logo.png') }}" type="image/x-icon">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div id="mainContainer">
+        {% block body %}
+        {% endblock %}
+    </div>
+    <footer>
+        Réalisé par <a href="https://higumadev.fr" target="_blank">HigumaDev</a>
+    </footer>
+    {{ encore_entry_script_tags('app') }}
+    {% block javaScript %}
+    {% endblock %}
+</body>
+</html>
