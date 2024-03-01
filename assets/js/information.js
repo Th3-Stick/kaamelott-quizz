@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Question from './question'
 
 export default function Informations() {
-    const [player, setPlayer] = useState('Robert');
+    const [player, setPlayer] = useState('');
     const [errorMessage, setErrorMessage] = useState(null);
     const [score, setScore] = useState(0)
     const [attempt, setAttempt] = useState(0)
