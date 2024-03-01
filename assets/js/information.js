@@ -77,15 +77,15 @@ export default function Informations() {
                         <h1 className="text-3xl">Bienvenue à toi jeune fan de Kaamelott, dis nous qui tu es ?</h1>
                         <Form onSubmit={handleSubmit} className="mt-10">
                             <Form.Group className="mb-3 text-3xl" controlId="playerName">
-                                <Form.Control className="h-12 w-10/12 px-6 font-sans" type="text"/>
+                                <Form.Control className="h-12 w-10/12 px-6 font-sans" placeholder="Pseudo" type="text"/>
                             </Form.Group>
-                            <div className="mb-0">Nombre de questions</div>
-                            <Form.Select className="font-sans block mx-auto" name="maxAttempt">
+                            <div className="text-2xl mb-0">Nombre de questions</div>
+                            <Form.Select className="text-2xl font-sans block mx-auto" name="maxAttempt">
                                 <option value="10">10</option>
                                 <option value="20">20</option>
                                 <option value="30">30</option>
                             </Form.Select>
-                            <Button className="bg-yellow-500 hover:bg-yellow-600 px-3 pt-3 mt-8 rounded-full" type="submit">
+                            <Button className="bg-yellow-500 text-2xl hover:bg-yellow-600 px-3 pt-3 mt-8 rounded-full" type="submit">
                                 Valider
                             </Button>
                         </Form>

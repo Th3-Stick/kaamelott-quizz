@@ -32,7 +32,7 @@ body{
 
 #bg {
     margin-inline: auto;
-    margin-top: 4rem;
+    margin-top: 2rem;
     position: relative;
     width: 70vw;
     min-height: 300px;
@@ -67,6 +67,7 @@ body{
 }
 
 #answers {
+    font-family: system-ui;
     margin-top: 2rem;
     margin-inline: auto;
     width: 50vw;
@@ -77,6 +78,7 @@ body{
     grid-row-gap: 0px;
 
     button{
+        font-size: 1.5rem;
         margin-block: 1rem;
         width: 90%;
         height: 60%;

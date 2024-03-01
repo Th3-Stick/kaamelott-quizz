@@ -1,4 +1,4 @@
-import React, { useState, useEffect, StrictMode } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Question({ incrementScore, incrementAttempt }) {
     const [goodAnswer, setGoodAnswer] = useState('')
@@ -36,11 +36,11 @@ export default function Question({ incrementScore, incrementAttempt }) {
                 setLoading(false);
                 setErrorMessage(null);
             })
-            .catch((err) => {
+            .catch(() => {
                 setErrorMessage("Une erreur interne est survenue dans la récupération des personnages");
                 setLoading(false);
             });
-    };
+    }
 
     const fetchData = () => {
         fetch(`https://kaamelott.reiter.tf/quote/random`, {
@@ -56,7 +56,7 @@ export default function Question({ incrementScore, incrementAttempt }) {
                 return response.json();
             })
             .then((actualData) => {
-                if (actualData.infos.personnage === "") {
+                if (actualData.infos.personnage === null) {
                     fetchData();
                 } else {
                     setCitation(actualData.citation);
@@ -127,7 +127,7 @@ export default function Question({ incrementScore, incrementAttempt }) {
             <div id="answers">
                 {answers.map((answer, index) => (
                     <button key={index} onClick={checkAnswer}
-                            className="bg-yellow-500 hover:bg-yellow-600 px-3 pb-2 pt-3 rounded-full">
+                            className="bg-yellow-500 hover:bg-yellow-600 p-2 rounded-full">
                         {answer}
                     </button>
                 ))}
