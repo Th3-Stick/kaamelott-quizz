@@ -8,18 +8,25 @@
     font-style: normal;
 }
 
-
-#mainContainer{
-    font-family: folkard, serif;
-    min-height: 100vh;
+body{
     background-image: url('../../public/build/images/fond.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+#mainContainer{
+    font-family: folkard, serif;
+    min-height: calc(100vh - 24px);
+    padding-top: 4rem;
 
     h1{
         line-height: normal;
     }
+}
+
+#game{
+    margin-bottom: 2rem;
 }
 
 #bg {
@@ -54,6 +61,10 @@
     padding: 2rem;
 }
 
+#question {
+    font-family: system-ui;
+}
+
 #answers {
     margin-top: 2rem;
     margin-inline: auto;
@@ -71,10 +82,32 @@
     }
 }
 
+@media only screen and (max-width: 600px) {
+    #mainContainer{
+        padding-top: 2rem;
+    }
+
+    #answers {
+        width: 90vw;
+    }
+
+    #question{
+        padding: 1rem;
+    }
+
+    #bg {
+        width: 95vw;
+        margin-top: 1rem;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+
+}
+
 footer{
     margin-left: 2rem;
-    position: fixed;
-    bottom: 0;
     color: white;
     font-family: folkard, serif;
 }

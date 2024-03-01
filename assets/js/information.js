@@ -77,7 +77,7 @@ export default function Informations() {
                         <h1 className="text-3xl">Bienvenue à toi jeune fan de Kaamelott, dis nous qui tu es ?</h1>
                         <Form onSubmit={handleSubmit} className="mt-10">
                             <Form.Group className="mb-3 text-3xl" controlId="playerName">
-                                <Form.Control className="h-12 w-96 px-6 font-sans" type="text"/>
+                                <Form.Control className="h-12 w-10/12 px-6 font-sans" type="text"/>
                             </Form.Group>
                             <div className="mb-0">Nombre de questions</div>
                             <Form.Select className="font-sans block mx-auto" name="maxAttempt">
