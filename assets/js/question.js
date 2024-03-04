@@ -94,8 +94,8 @@ export default function Question({ incrementScore, incrementAttempt }) {
         if (playerInput === goodAnswer) {
             incrementScore();
         }
-        fetchData();
         incrementAttempt();
+        fetchData();
     }
 
     if (loading) {
