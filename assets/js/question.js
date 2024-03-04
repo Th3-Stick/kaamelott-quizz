@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Timer from './timer'
 
 export default function Question({ incrementScore, incrementAttempt }) {
     const [goodAnswer, setGoodAnswer] = useState('')
@@ -7,6 +8,8 @@ export default function Question({ incrementScore, incrementAttempt }) {
     const [citation, setCitation] = useState('');
     const [errorMessage, setErrorMessage] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [timerStarted, setTimerStarted] = useState(false);
+
 
     useEffect(() => {
         fetchAnswers();
@@ -35,6 +38,7 @@ export default function Question({ incrementScore, incrementAttempt }) {
                 setCharacters(actualData);
                 setLoading(false);
                 setErrorMessage(null);
+                setTimerStarted(true);
             })
             .catch(() => {
                 setErrorMessage("Une erreur interne est survenue dans la récupération des personnages");
