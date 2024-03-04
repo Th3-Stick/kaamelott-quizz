@@ -2,8 +2,7 @@
 .idea
 
 # Environnement
-#.env
-#.env.local
+.env
 
 # Cache result phpunit
 .phpunit.result.cache
