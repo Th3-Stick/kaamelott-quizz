@@ -15,10 +15,18 @@ body{
     background-size: cover;
 }
 
+nav{
+    background-color: black ;
+    color: white;
+    text-align: center;
+    padding-block: .7rem;
+    font-size: 1.5rem;
+    line-height: normal;
+}
+
 #mainContainer{
     font-family: folkard, serif;
     min-height: calc(100vh - 24px);
-    padding-top: 4rem;
 
     h1{
         line-height: normal;
@@ -35,7 +43,6 @@ body{
     margin-top: 2rem;
     position: relative;
     width: 70vw;
-    min-height: 300px;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -49,14 +56,13 @@ body{
     height: 100%;
     background-image: url('../../public/build/images/questions.png');
     background-size: cover;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 #informations, #question, #results {
     position: relative;
     z-index: 1;
     width: 100%;
-    min-height: 300px;
     color: black;
     text-align: center;
     padding: 2rem;
@@ -64,6 +70,7 @@ body{
 
 #question {
     font-family: system-ui;
+    text-shadow: #ededed 1px 1px 2px;
 }
 
 #answers {
@@ -86,10 +93,6 @@ body{
 }
 
 @media only screen and (max-width: 600px) {
-    #mainContainer{
-        padding-top: 2rem;
-    }
-
     #answers {
         width: 90vw;
     }
@@ -114,5 +117,6 @@ footer{
     color: white;
     font-family: folkard, serif;
 }
+
 
 
